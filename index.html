@@ -52,11 +52,30 @@
 
         
         <div class="imagemUsuario">
-            <a href="#"><img src="Imagem/pngwing.com (1).png" class="imagemUser" alt="" srcset=""></a>
+            <div class="quadroMenuUsuario" id="quadroMenuUsuario">
+                <div class="espacoArrow" style="padding-top: 30px;">
+                    <div class="arrow-left" id="arrow-left"></div>
+                </div>
+                
+                <div class="menuOpcoesUsuario" id="menuOpcoesUsuario">
+                    <div class="opcaoMenuUsuario" style="margin-top: 7px; margin-bottom: 5px;">
+                       <p><b>Ver Foto</b></p> 
+                    </div>
+
+                    <div class="opcaoMenuUsuario" style="">
+                        <p><b>Ver Perfil</b></p> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="sairMenuUsuario" id="sairMenuUsuario" onclick="sairMenuUsuario()"> x </div>
+            
+            <a href="#"><img src="Imagem/pngwing.com (1).png" class="imagemUser" id="imagemUser" alt="" srcset="" onclick="menuOpcoesUsuario()"></a>
         </div>
         
     </div>
 
     <script src="menuLateral.js"></script>
+    <script src="menuOpcoesUsuario.js"></script>
 </body>
 </html>
