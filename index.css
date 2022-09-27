@@ -62,6 +62,7 @@ body{
     line-height: 50px;
     color: white;
     padding-left: 15px;
+    border-left: 0px solid white;
     transition: .5s;
     box-sizing: border-box;
     position: relative;
@@ -69,13 +70,27 @@ body{
 
 .opcaoMenu:hover{
     background-color: rgba(0, 0, 0, 0.6);
-    border: 1px solid white;
-    border-left: 25px solid white;
-    transition: 1s;
+    font-size: 20px;
+    border-left: 15px solid white;
+    transition: .3s;
 }
 
 .imagemUsuario{
     width: 100%;
-    text-align: center;
-    padding: 30px;
+    height: 120px;
+    position: relative;
+}
+
+.imagemUser{
+    width: 50px;
+    transition: .5s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.imagemUser:hover{
+    width: 65px;
+    transition: .5s;
 }
