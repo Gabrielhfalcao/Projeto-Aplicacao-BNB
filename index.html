@@ -17,6 +17,10 @@
         <div class="fecharMenuLateral" id="fecharMenuLateral" onclick="sairMenuLateral()">
             <img src="Imagem/hamburger-menu-icon-png-9.jpg" width="30px" height="30px" alt="">
         </div>
+
+        <div class="desabilitarBtnMenuLateral" id="desabilitarBtnMenuLateral">
+            <img src="Imagem/hamburger-menu-icon-png-9.jpg" width="30px" height="30px" alt="">
+        </div>
     </div>
 
     <div class="menuLateral" id="menuLateral">
@@ -58,11 +62,11 @@
                 </div>
                 
                 <div class="menuOpcoesUsuario" id="menuOpcoesUsuario">
-                    <div class="opcaoMenuUsuario" style="margin-top: 7px; margin-bottom: 5px;">
+                    <div class="opcaoMenuUsuario" style="margin-top: 7px; margin-bottom: 5px;" onclick="mostrarFotoUsuario()">
                        <p><b>Ver Foto</b></p> 
                     </div>
 
-                    <div class="opcaoMenuUsuario" style="">
+                    <div class="opcaoMenuUsuario"\ onclick="">
                         <p><b>Ver Perfil</b></p> 
                     </div>
                 </div>
@@ -72,7 +76,14 @@
             
             <a href="#"><img src="Imagem/pngwing.com (1).png" class="imagemUser" id="imagemUser" alt="" srcset="" onclick="menuOpcoesUsuario()"></a>
         </div>
-        
+    </div>
+
+    <div class="espacoImagemUsuarioEmFoco" id="espacoImagemUsuarioEmFoco">
+        <div class="fotoUsuarioEmFoco" id="fotoUsuarioEmFoco">
+            <img src="Imagem/pngwing.com (1).png" width="300px" class="imagemUsuarioEmFoco" id="imagemUsuarioEmFoco">
+        </div>
+
+        <div class="sairFotoUsuarioEmFoco" id="sairFotoUsuarioEmFoco" onclick="sairFotoUsuarioEmFoco()"><p><b>x</b></p> </div>
     </div>
 
     <script src="menuLateral.js"></script>
