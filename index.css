@@ -1,204 +1,66 @@
 body{
     margin: 0px;
-    background-color: rgb(58, 58, 58);
+    background-color: rgba(243,243,243,255);
+    background-image: url(back.PNG);
+    background-size: 300px;
+    background-repeat: no-repeat;
+    background-position: 60% 50%;   
 }
 
-.cabecalho{
-    width: 100%;
-    height: 70px;
-    line-height: 70px;
-    background-color: rgb(46, 46, 68);
-    box-shadow: 0px 0px 0px 0px black;
-    text-align: center;
-}
-
-.btnMenuLateral{
-    width: 70px;
-    height: 70px;
-    line-height: 70px;
-    text-align: center;
-    background-color: rgb(46, 46, 68);
+.tituloPortal{
+    color: rgb(166,25,60);
+    font-size: 50px;
     position: absolute;
-    top: 0;
-    transition: .5s;
-}
-
-.btnMenuLateral:hover{
-    background-color: rgb(36, 36, 54);
-    transition: .5s;
+    top: 20px;
+    left: 350px;
 }
 
 .menuLateral{
-    width: 260px;
-    height: 100vh ;
-    background-color: rgb(36, 36, 54);
-    position: absolute;
-    top: 0;
-    left: -260px;
-    z-index: -1;
-    transition: .5s;
-    padding-top: 70px;
+    margin: 0px;
+    width: 300px;
+    height: 100vh;
+    background-color: rgb(166,25,60);
 }
 
-.fecharMenuLateral{
-    width: 70px;
-    height: 70px;
-    line-height: 70px;
-    text-align: center;
-    position: absolute;
-    top: 0;
-    display: none;
-    z-index: 1;
-    transition: .5s;
-}
-
-.desabilitarBtnMenuLateral{
-    width: 70px;
-    height: 70px;
-    line-height: 70px;
-    text-align: center;
-    position: absolute;
-    top: 0;
-    display: none;
-    z-index: 1000;
-    transition: .5s;
-}
-
-.fecharMenuLateral:hover{
-    background-color: rgb(36, 36, 54);
+.logo{
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
 }
 
 .opcaoMenu{
     width: 100%;
-    height: 50px;
-    line-height: 50px;
+    height: 40px;
+    line-height: 40px;
     color: white;
-    padding-left: 15px;
-    border-left: 0px solid white;
+    font-size: 15px;
     transition: .5s;
-    box-sizing: border-box;
+    overflow: hidden;
     position: relative;
 }
 
 .opcaoMenu:hover{
-    background-color: rgba(0, 0, 0, 0.6);
-    font-size: 20px;
-    border-left: 15px solid white;
-    transition: .3s;
+    background-color: rgb(145, 22, 53);
+    transition: .5s;
 }
 
-.imagemUsuario{
+.subOpcaoMenu{
     width: 100%;
-    height: 120px;
-    position: relative;
-    margin-top: 30px;
-}
-
-.imagemUser{
-    width: 50px;
-    transition: .5s;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.imagemUser:hover{
-    width: 65px;
-    transition: .5s;
-}
-
-.quadroMenuUsuario{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    width: 120px;
-    height: 80px;
-}
-
-.opcaoMenuUsuario{
-    width: 100px;
-    height: 30px;
-    border: 3px white solid;
-    border-radius: 30px;
-    margin-left: 5px;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 40px;
     color: white;
-    text-align: center;
-    line-height: 25px;
+    font-size: 15px;
     transition: .5s;
 }
 
-.opcaoMenuUsuario:hover{
-    background-color: white;
-    color: rgba(0, 0, 0, 0.6);
-    transition: .5s;
+.subOpcaoMenu:hover{
+    background-color: rgb(117, 18, 43);
 }
 
-.menuOpcoesUsuario{
-    width: 1px;
-    height: 1px;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 20px;
-    overflow: hidden;
-}
-
-.arrow-left {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 0; 
-    height: 0; 
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent; 
-    border-right:10px solid rgb(36, 36, 54); 
-  }
-
-.sairMenuUsuario{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 30px;
-    height: 30px;
-    background-color: rgb(36, 36, 54);
-    line-height: 20px;
-    text-align: center;
-    border-radius: 30px;
-    border: 3px solid rgb(36, 36, 54);
-    color: rgb(36, 36, 54);
-}
-
-.espacoImagemUsuarioEmFoco{
-    position: absolute;
-    top: -500px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.7);
-    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.7);
-}
-
-.fotoUsuarioEmFoco{
-    width: 300px;
-    height: 300px;
-    border-radius: 300px;
-    background-color: rgb(255, 255, 255);
-    overflow: hidden;
-}
-
-.sairFotoUsuarioEmFoco{
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    font-size: 30px;
-    background-color: rgb(0, 0, 0);
-    line-height: 37px;
-    text-align: center;
-    border-radius: 30px;
-    border: 8px solid white;
-    color: white;
+#btnRelatorio{
+    display: none;
 }
