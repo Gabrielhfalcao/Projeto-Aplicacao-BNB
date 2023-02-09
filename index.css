@@ -7,6 +7,12 @@ body{
     background-position: 60% 50%;   
 }
 
+input{
+    border-radius: 20px;
+    border: 1px solid gray;   
+    padding-left: 10px;
+}
+
 .tituloPortal{
     color: rgb(166,25,60);
     font-size: 50px;
@@ -85,5 +91,27 @@ body{
     transition: 5s;
     overflow: hidden;
     width: 320px; 
+}
+
+.conteudo{
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 20px;
+    height: fit-content;
+    padding: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.tituloConteudo{
+    position: absolute;
+    top: -20px;
+    height: 30px;
+    line-height: 40px;
+    padding-left: 8px;
+    padding-right: 8px;
+    color: rgb(77, 77, 77);
+    background-color: white;
 }
 
