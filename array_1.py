@@ -1,4 +1,26 @@
 import csv
+import os
+import random
+import pandas as pd
+
+pasta = '.' 
+extensoes = ['csv'] 
+arq = []
+listaParaSelecionar = []
+escolhas = []
+
+arquivos = os.listdir(pasta)
+for i in arquivos:
+	extensao = i.split('.')[-1]
+	if extensao in extensoes:
+		x = i.split('.')[0]
+		listaParaSelecionar.append(x)
+		arq.append(i)
+
+while len(escolhas) < 10:
+    escolha = random.choice(listaParaSelecionar)
+    if not any([s.endswith(escolha[-3:]) for s in escolhas]):
+        escolhas.append(escolha)
 
 dados1 = []
 
@@ -43,7 +65,7 @@ datasSelecionadas = []
 listafinal = []
 
 
-with open("autoverificacao769.csv") as arquivocsv:
+with open(str(escolhas[0] + ".csv")) as arquivocsv:
     ler = csv.DictReader(arquivocsv, delimiter="\t")
     for linha in ler:
         dados1.append(linha)
@@ -65,39 +87,39 @@ def povoarVariaveis(arquivo, listaDeDados, dataDoRegistro, datasSelecionadas, da
             if z not in datasSelecionadas:
                 datasNaoRepetidadas.append(z)
 
-povoarVariaveis("autoverificacao770.csv", dados2, data2, datasSelecionadas, datasNaoRepetidadas2)                
+povoarVariaveis(str(escolhas[1])+ ".csv", dados2, data2, datasSelecionadas, datasNaoRepetidadas2)                
 registroNaoRepetido2 = int(data2.index(datasNaoRepetidadas2[0]))
 datasSelecionadas.append(datasNaoRepetidadas2[0])
 
-povoarVariaveis("autoverificacao771.csv", dados3, data3, datasSelecionadas, datasNaoRepetidadas3)
+povoarVariaveis(str(escolhas[2])+ ".csv", dados3, data3, datasSelecionadas, datasNaoRepetidadas3)
 registroNaoRepetido3 = int(data3.index(datasNaoRepetidadas3[0]))
 datasSelecionadas.append(datasNaoRepetidadas3[0])
 
-povoarVariaveis("autoverificacao772.csv", dados4, data4, datasSelecionadas, datasNaoRepetidadas4)
+povoarVariaveis(str(escolhas[3])+ ".csv", dados4, data4, datasSelecionadas, datasNaoRepetidadas4)
 registroNaoRepetido4 = int(data4.index(datasNaoRepetidadas4[0]))
 datasSelecionadas.append(datasNaoRepetidadas4[0])
 
-povoarVariaveis("autoverificacao773.csv", dados5, data5, datasSelecionadas, datasNaoRepetidadas5)
+povoarVariaveis(str(escolhas[4])+ ".csv", dados5, data5, datasSelecionadas, datasNaoRepetidadas5)
 registroNaoRepetido5 = int(data5.index(datasNaoRepetidadas5[0]))
 datasSelecionadas.append(datasNaoRepetidadas5[0])
 
-povoarVariaveis("autoverificacao774.csv", dados6, data6, datasSelecionadas, datasNaoRepetidadas6)
+povoarVariaveis(str(escolhas[5])+ ".csv", dados6, data6, datasSelecionadas, datasNaoRepetidadas6)
 registroNaoRepetido6 = int(data6.index(datasNaoRepetidadas6[0]))
 datasSelecionadas.append(datasNaoRepetidadas6[0])
 
-povoarVariaveis("autoverificacao775.csv", dados7, data7, datasSelecionadas, datasNaoRepetidadas7)
+povoarVariaveis(str(escolhas[6])+ ".csv", dados7, data7, datasSelecionadas, datasNaoRepetidadas7)
 registroNaoRepetido7 = int(data7.index(datasNaoRepetidadas7[0]))
 datasSelecionadas.append(datasNaoRepetidadas7[0])
 
-povoarVariaveis("autoverificacao776.csv", dados8, data8, datasSelecionadas, datasNaoRepetidadas8)
+povoarVariaveis(str(escolhas[7])+ ".csv", dados8, data8, datasSelecionadas, datasNaoRepetidadas8)
 registroNaoRepetido8 = int(data8.index(datasNaoRepetidadas8[0]))
 datasSelecionadas.append(datasNaoRepetidadas8[0])
 
-povoarVariaveis("autoverificacao777.csv", dados9, data9, datasSelecionadas, datasNaoRepetidadas9)
+povoarVariaveis(str(escolhas[8])+ ".csv", dados9, data9, datasSelecionadas, datasNaoRepetidadas9)
 registroNaoRepetido9 = int(data9.index(datasNaoRepetidadas9[0]))
 datasSelecionadas.append(datasNaoRepetidadas9[0])
 
-povoarVariaveis("autoverificacao778.csv", dados10, data10, datasSelecionadas, datasNaoRepetidadas10)
+povoarVariaveis(str(escolhas[9])+ ".csv", dados10, data10, datasSelecionadas, datasNaoRepetidadas10)
 registroNaoRepetido10 = int(data10.index(datasNaoRepetidadas10[0]))
 datasSelecionadas.append(datasNaoRepetidadas10[0])
 
@@ -114,3 +136,6 @@ listafinal.append(dados9[registroNaoRepetido9])
 listafinal.append(dados10[registroNaoRepetido10])
 
 print(listafinal)
+
+df = pd.DataFrame(listaFinal)
+df.to_excel('registros.xlsx', index=False)
