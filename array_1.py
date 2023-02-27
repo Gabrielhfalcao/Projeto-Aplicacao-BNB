@@ -139,3 +139,27 @@ print(listafinal)
 
 df = pd.DataFrame(listaFinal)
 df.to_excel('registros.xlsx', index=False)
+
+
+df = pd.DataFrame(listaFinal)
+
+writer = pd.ExcelWriter('C:/Users/gabri/OneDrive/Documentos/a/RegistrosGerados/registrosAleatorios.xlsx', engine='openpyxl')
+df.to_excel(writer, sheet_name='Dados', index=False)
+worksheet = writer.sheets['Dados']
+
+for col in worksheet.columns:
+    max_length = 0
+    column = col[0].column_letter
+    
+    for cell in col:
+        try:
+            if len(str(cell.value)) > max_length:
+                max_length = len(str(cell.value))
+        except:
+            pass
+        
+    adjusted_width = (max_length + 2)
+    worksheet.column_dimensions[column].width = adjusted_width
+
+writer.save()
+
