@@ -176,10 +176,13 @@ writer.save()
 import pandas as pd
 import statistics
 import sys
+import os
 
 listaDeDados = []
 
+os.system('cls')
 def povoarLista(lista):
+    os.system('cls')
     x = int(input("Digite o tamanho da lista de dados a ser analisáda: "))
     print("")
 
@@ -189,9 +192,11 @@ def povoarLista(lista):
         indice += 1
 
     listaDeDados.sort()
+    os.system('cls')
     menuPrincipal()
 
 def menuPrincipal():
+    os.system('cls')  
     print()
     print("---------Menu Principal---------")
     print("Lista de dados: " + str(listaDeDados))
@@ -208,26 +213,22 @@ def menuPrincipal():
         print()
         print("Lista de dados: " + str(listaDeDados)) 
         print("A Média Aritmética da lista de dados é: " + str(mediaAritmetica(listaDeDados)))
-        print()
         opcaoVoltarAoMenuOuSair()
     
     elif x == 2:
         print()
         print("Lista de dados: " + str(listaDeDados)) 
         print("A Média Ponderada da lista de dados é: " + str(mediaPoderada(listaDeDados)))
-        print()
         opcaoVoltarAoMenuOuSair()
 
     elif x == 3:
         print()
-        print("Lista de dados: " + str(listaDeDados)) 
         print("A Moda da lista de dados é: " + str(moda(listaDeDados)))
         print()
         opcaoVoltarAoMenuOuSair()
 
     elif x == 4: 
         print()
-        print("Lista de dados: " + str(listaDeDados)) 
         print("A Mediana da lista de dados é: " + str(mediana(listaDeDados)))
         print()
         opcaoVoltarAoMenuOuSair()
@@ -244,9 +245,13 @@ def menuPrincipal():
         menuPrincipal()
 
 def mediaAritmetica(lista):
+    os.system('cls')
+    print("Lista de dados: " + str(listaDeDados)) 
     return statistics.mean(lista)  
 
 def moda(lista):
+    os.system('cls')
+    print("Lista de dados: " + str(listaDeDados)) 
     x = statistics.multimode(lista)
     if len(x) == len(lista):
         return("A lista não possui moda")
@@ -260,7 +265,8 @@ def moda(lista):
         return(str(statistics.multimode(lista)) + " (MULTIMODAL)")
 
 def mediaPoderada(lista):
-    print(lista)
+    os.system('cls')
+    print("Lista de dados: " + str(listaDeDados)) 
     indice = 0
     somaNumerador = 0
     somaDenominador = 0
@@ -272,10 +278,12 @@ def mediaPoderada(lista):
     return (somaNumerador/somaDenominador)    
 
 def mediana(lista):
+    os.system('cls')
+    print("Lista de dados: " + str(listaDeDados)) 
     return statistics.median(lista)
 
 def opcaoVoltarAoMenuOuSair():
-    x = input("-----Para sair do Programa digite [0] ou para voltar ao menu digite [1]----")
+    x = int(input("-----Para sair do Programa digite [0] ou para voltar ao menu digite [1]----"))
     if x == 0:
         sairDoPrograma()
     elif x == 1:
@@ -283,8 +291,8 @@ def opcaoVoltarAoMenuOuSair():
     else:
         ("Digite uma opção válida:")
         opcaoVoltarAoMenuOuSair()    
+
 def sairDoPrograma():    
     sys.exit()
 
 povoarLista(listaDeDados)
-
