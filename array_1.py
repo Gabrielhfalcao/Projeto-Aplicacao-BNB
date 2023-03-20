@@ -321,3 +321,30 @@ function contarTorres(){
     console.log(totalTorres)
 }
 contarTorres()
+
+
+
+var pecas_tabuleiro = [
+    [4, 3, 2, 5, 6, 2, 3, 4],
+    [1, 1, 1, 1, 1, 1, 1, 1],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [1, 1, 1, 1, 1, 1, 1, 1],
+    [4, 3, 2, 5, 6, 2, 3, 4]
+]    
+
+function contarPecas(numeroPeca){
+    var totalPecas = 0;
+    var indice = 0;
+    while(indice < pecas_tabuleiro.length){
+        var listaPeca = pecas_tabuleiro[indice].filter(peca => peca == numeroPeca)
+        totalPecas += listaPeca.length
+        indice++
+    }
+    console.log(totalPecas)
+}
+
+contarPecas(4)
+contarPecas(1)
