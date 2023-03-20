@@ -296,3 +296,28 @@ def sairDoPrograma():
     sys.exit()
 
 povoarLista(listaDeDados)
+
+
+
+var pecas_tabuleiro = [
+    [4, 3, 2, 5, 6, 2, 3, 4],
+    [1, 1, 1, 1, 1, 1, 1, 1],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [1, 1, 1, 1, 1, 1, 1, 1],
+    [4, 3, 2, 5, 6, 2, 3, 4]
+]    
+
+function contarTorres(){
+    var totalTorres = 0;
+    var indice = 0;
+    while(indice < pecas_tabuleiro.length){
+        var listaTorres = pecas_tabuleiro[indice].filter(torres => torres == 4)
+        totalTorres += listaTorres.length
+        indice++
+    }
+    console.log(totalTorres)
+}
+contarTorres()
