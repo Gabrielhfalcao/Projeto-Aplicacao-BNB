@@ -343,8 +343,7 @@ function contarPecas(numeroPeca){
         totalPecas += listaPeca.length
         indice++
     }
-    console.log(totalPecas)
+    return totalPecas
 }
 
-contarPecas(4)
-contarPecas(1)
+console.log(contarPecas(4))
