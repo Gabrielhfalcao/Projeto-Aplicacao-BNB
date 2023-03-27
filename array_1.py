@@ -347,3 +347,63 @@ function contarPecas(numeroPeca){
 }
 
 console.log(contarPecas(4))
+
+
+
+@ManagedBean
+@ViewScoped
+public class PrmoBean implements Serializable {
+
+  private List<V420prmo> prmos;
+  private V420prmo prmoSelecionado;
+
+  @EJB
+  private V420prmoService prmoService;
+
+  @PostConstruct
+  public void init() {
+    prmos = prmoService.listarPrmos();
+  }
+
+  public void excluirPrmo() {
+    prmoService.excluirPrmo(prmoSelecionado);
+    prmos.remove(prmoSelecionado);
+  }
+
+  public void atualizarPrmo() {
+    prmoService.atualizarPrmo(prmoSelecionado);
+  }
+
+  // getters e setters
+}
+
+
+
+<h:form>
+  <p:dataTable value="#{prmoBean.prmos}" var="prmo">
+    <p:column headerText="ID">
+      #{prmo.v420prmoId}
+    </p:column>
+    <p:column headerText="Nome">
+      #{prmo.nome}
+    </p:column>
+    <p:column headerText="Descrição">
+      #{prmo.descricao}
+    </p:column>
+    <p:column headerText="Ações">
+      <p:commandButton value="Editar" icon="pi pi-pencil" onclick="PF('dialogEditar').show(); PF('idEditar').setValue('#{prmo.v420prmoId}'); PF('nomeEditar').setValue('#{prmo.nome}'); PF('descricaoEditar').setValue('#{prmo.descricao}');" />
+      <p:commandButton value="Excluir" icon="pi pi-trash" action="#{prmoBean.excluirPrmo}" update=":form:table" />
+    </p:column>
+  </p:dataTable>
+</h:form>
+
+<p:dialog header="Editar PRMO" widgetVar="dialogEditar" modal="true">
+  <h:form>
+    <p:inputText id="idEditar" value="#{prmoBean.prmoSelecionado.v420prmoId}" style="display:none" />
+    <p:outputLabel for="nomeEditar" value="Nome:" />
+    <p:inputText id="nomeEditar" value="#{prmoBean.prmoSelecionado.nome}" />
+    <p:outputLabel for="descricaoEditar" value="Descrição:" />
+    <p:inputText id="descricaoEditar" value="#{prmoBean
+
+
+
